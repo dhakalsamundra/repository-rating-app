@@ -1,3 +1,5 @@
+import Constants from 'expo-constants';
+
 const theme = {
     colors: {
       textPrimary: '#24292e',
@@ -15,6 +17,11 @@ const theme = {
       normal: '400',
       bold: '700',
     },
+    appColor: {
+        backgroundColor: 'brown',
+        paddingTop: Constants.statusBarHeight,
+
+    }
   };
   
   export default theme;
