@@ -1,6 +1,6 @@
 import React from 'react';
 import Constants from 'expo-constants';
-import {StyleSheet, View } from 'react-native';
+import {StyleSheet, Image, View } from 'react-native';
 import Text from './Text';
 
 
@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
 });
 
 const RepositoryItem = ({item}) => {
-  console.log(item);
   return (
     <View style={styles.container}>
+      <Image style={{height:25, width:25}} source = {{uri: item.ownerAvatarUrl}} />
       <Text fontWeight="bold" fontSize="subheading">Full name: {item.fullName}</Text>
       <Text>Description:{item.description}</Text>
       <Text>Language:{item.language}</Text>
