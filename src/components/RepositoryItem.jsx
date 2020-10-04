@@ -1,6 +1,8 @@
 import React from 'react';
 import Constants from 'expo-constants';
-import { Text, StyleSheet, View } from 'react-native';
+import {StyleSheet, View } from 'react-native';
+import Text from './Text';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +16,7 @@ const RepositoryItem = ({item}) => {
   console.log(item);
   return (
     <View style={styles.container}>
-      <Text>Full name: {item.fullName}</Text>
+      <Text fontWeight="bold" fontSize="subheading">Full name: {item.fullName}</Text>
       <Text>Description:{item.description}</Text>
       <Text>Language:{item.language}</Text>
       <Text>Forks:{item.forksCount}</Text>
