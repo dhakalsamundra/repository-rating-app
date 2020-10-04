@@ -40,7 +40,7 @@ const CardHeader = ({item}) => {
       <View style={cardHeaderStyles.infoContainer}>
         <Text fontWeight="bold" fontSize="subheading">{item.fullName}</Text>
         <Text color="textSecondary">{item.description}</Text>
-        <View style={cardHeaderStyles.Language}><Text fontWeight="bold" fontSize="subheading">{item.language}</Text></View>
+        <View style={cardHeaderStyles.Language}><Text fontSize="subheading">{item.language}</Text></View>
       </View>
     </View>
   );
@@ -55,26 +55,46 @@ const cardFooterStyles = StyleSheet.create({
   footer: {
     flexDirection: 'column',
     borderRadius:10,
-    borderWidth: 1,
-    borderColor: 'black',
     justifyContent: 'flex-start'
   }
 });
 
 const CardFooter = ({item}) => {
+  function convert(value)
+{
+    if(value>=1000000)
+    {
+        value=(value/1000000)+"M"
+    }
+    else if(value>=1000)
+    {
+        value=(value/1000)+"K";
+    }
+    return value;
+}
+  const fork = item.forksCount
+  const rate = item.ratingAverage
+  const review = item.reviewCount
+  const star = item.stargazersCount
+
+  const forksCount = convert(fork)
+  const rateCount = convert(rate)
+  const reviewCount = convert(review)
+  const starCount = convert(star)
+
   return (
     <View style={cardFooterStyles.container}>
       <View style={cardFooterStyles.footer}>
-        <Text>{item.forksCount}</Text><Text>Forks</Text>
+        <Text>{forksCount}</Text><Text>Forks</Text>
       </View>
       <View style={cardFooterStyles.footer}>
-        <Text>{item.ratingAverage}</Text><Text>Rate</Text>
+        <Text>{rateCount}</Text><Text>Rate</Text>
       </View>
       <View style={cardFooterStyles.footer}>
-        <Text>{item.reviewCount}</Text><Text>Review</Text>
+        <Text>{reviewCount}</Text><Text>Review</Text>
       </View>
       <View style={cardFooterStyles.footer}>
-       <Text>{item.stargazersCount}</Text><Text>Stars</Text>
+       <Text>{starCount}</Text><Text>Stars</Text>
       </View>
     </View>
   );
@@ -83,7 +103,6 @@ const CardFooter = ({item}) => {
 const cardStyles = StyleSheet.create({
   container: {
     alignItems: 'stretch',
-    borderColor: 'red',
     justifyContent: 'space-evenly'
   },
 });
