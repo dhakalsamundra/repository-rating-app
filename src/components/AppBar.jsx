@@ -1,24 +1,36 @@
 import React from 'react';
-import { Text,View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import theme from '.././theme'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { View,Text, TouchableWithoutFeedback,StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import { Link } from "react-router-native";
 
-
-import RepositoryList from './RepositoryList';
-import SignIn from './SignIn'
-
-const Tab = createMaterialTopTabNavigator();
-
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#24292e',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    // borderWidth: 2,
+    // borderColor: 'red',
+  },
+  link: {
+    color: 'white',
+    // borderWidth: 2,
+    // borderColor: 'red',
+  }
+});
 
 const AppBar = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-      <Tab.Screen name="Repositories" component={RepositoryList} />
-      <Tab.Screen name="Sign in" component={SignIn} />
-    </Tab.Navigator>
-    </NavigationContainer>
+  <View style={styles.container}>
+    <View style={styles.link}><TouchableWithoutFeedback>
+    <Link to="/"><Text>Repositories</Text></Link></TouchableWithoutFeedback>
+    </View>
+    <View style={styles.link}>
+    <TouchableWithoutFeedback>
+    <Link to="/signin"><Text>Sign in</Text></Link>
+    </TouchableWithoutFeedback></View>
+  </View>
   );
 };
 
