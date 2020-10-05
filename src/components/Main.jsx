@@ -1,5 +1,5 @@
 import React from 'react';
-import {  StyleSheet, View } from 'react-native';
+import {  StyleSheet, View, StatusBar } from 'react-native';
 import { Route, Switch, Redirect } from 'react-router-native';
 
 import RepositoryList from './RepositoryList';
@@ -18,8 +18,9 @@ const styles = StyleSheet.create({
 const Main = () => {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="black" barStyle="light-content"/>
       <AppBar />
-      <Switch>
+      {/* <Switch>
         <Route path="/" exact>
           <RepositoryList />
         </Route>
@@ -27,7 +28,7 @@ const Main = () => {
           <SignIn />
         </Route>
         <Redirect to="/" />
-      </Switch>
+      </Switch> */}
 
     </View>
   );
