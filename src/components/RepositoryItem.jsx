@@ -7,26 +7,26 @@ const cardHeaderStyles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    flexGrow: 1,
+    flexGrow: 1
   },
   avatar: {
     width: 45,
-    height: 45,
+    height: 45 
   },
   avatarContainer: {
     flexGrow: 0,
-    paddingRight: 15,
+    paddingRight: 15 
   },
   infoContainer: {
     flexGrow: 1,
+    flexShrink:1
+    
   },
   Language: {
     paddingVertical: 15,
     width: 80,
     borderRadius:10,
-    backgroundColor: '#0366d6',
-    borderWidth: 1,
-    borderColor: 'black' 
+    backgroundColor: '#0366d6'
    }
 });
 
@@ -55,7 +55,7 @@ const cardFooterStyles = StyleSheet.create({
   footer: {
     flexDirection: 'column',
     borderRadius:10,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   }
 });
 
@@ -103,16 +103,18 @@ const CardFooter = ({item}) => {
 const cardStyles = StyleSheet.create({
   container: {
     alignItems: 'stretch',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    backgroundColor: 'white'
   },
 });
 
 const RepositoryItem = ({item}) => {
   return (
     <View style={cardStyles.container}>
-      <CardHeader item = {item} />
-      <CardFooter item = {item} />
+       <CardHeader item = {item} />
+       <CardFooter item = {item} />
     </View>
+
   );
 };
 
