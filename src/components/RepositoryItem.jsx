@@ -7,19 +7,22 @@ const cardHeaderStyles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    flexGrow: 1
+    flexGrow: 1,
+    marginTop: 5,
   },
   avatar: {
     width: 45,
-    height: 45 
+    height: 45,
+    borderRadius: 5,
+    marginTop: 5,
+    marginLeft: 20
   },
   avatarContainer: {
-    flexGrow: 0,
-    paddingRight: 15 
+    paddingRight: 15 ,
   },
   infoContainer: {
     flexGrow: 1,
-    flexShrink:1
+    flexShrink:1,
     
   },
   Language: {
@@ -31,7 +34,6 @@ const cardHeaderStyles = StyleSheet.create({
 });
 
 const CardHeader = ({item}) => {
-  console.log('this is the cardHeader', item)
   return (
     <View style={cardHeaderStyles.container}>
       <View style={cardHeaderStyles.avatarContainer}>
@@ -51,6 +53,7 @@ const cardFooterStyles = StyleSheet.create({
     flexDirection: 'row',
     flexGrow: 1,
     justifyContent: 'space-around',
+ 
   },
   footer: {
     flexDirection: 'column',
@@ -104,7 +107,7 @@ const cardStyles = StyleSheet.create({
   container: {
     alignItems: 'stretch',
     justifyContent: 'space-evenly',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
 });
 

@@ -5,7 +5,6 @@ import Constants from 'expo-constants';
 const styles = StyleSheet.create({
     container: {
       paddingTop: Constants.statusBarHeight,
-      // ...
       backgroundColor: '#24292e',
       display: "flex",
       flexDirection: "row"
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         margin: 20
     }
-    // ...
   });
   
   const AppBar = () => {
