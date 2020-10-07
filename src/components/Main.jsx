@@ -5,7 +5,6 @@ import { Route, Switch, Redirect } from 'react-router-native';
 import RepositoryList from './RepositoryList';
 import SignIn from './SignIn'
 import AppBar from './AppBar';
-import PingIn from './PingIn';
 import theme from '../theme';
 
 
