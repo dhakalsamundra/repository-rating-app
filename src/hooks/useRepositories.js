@@ -13,6 +13,7 @@ const useRepositories = () => {
 
     setLoading(false);
     setRepositories(json);
+    console.log(json)
     console.log('this is samundra dhakal.')
   };
 

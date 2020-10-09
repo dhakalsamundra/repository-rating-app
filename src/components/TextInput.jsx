@@ -6,7 +6,7 @@ const TextInput = ({ style, error, ...props }) => {
   const textInputStyle = [style]
   
   return <NativeTextInput style=
-  {Object.assign({}, style, {borderColor: error ? '#d73a4a': {textInputStyle}})}{...props} />;
+  {Object.assign({}, style, {borderColor: error ? 'red': {textInputStyle}})}{...props} />;
 };
 
 export default TextInput;
