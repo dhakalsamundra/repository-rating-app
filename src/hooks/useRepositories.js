@@ -10,11 +10,9 @@ const useRepositories = () => {
     // Replace the IP address part with your own IP address!
     const response = await fetch('http://192.168.43.172:5000/api/repositories');
     const json = await response.json();
-
+    console.log('response server', json)
     setLoading(false);
     setRepositories(json);
-    console.log(json)
-    console.log('this is samundra dhakal.')
   };
 
   useEffect(() => {
