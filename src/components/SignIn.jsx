@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     textAlign: 'center',
     borderRadius: 5
+  },
+  text: {
+    color: '#fff',
+    textAlign: 'center'
   }
 });
 
@@ -59,7 +63,7 @@ const SignInForm = ({onSubmit}) => {
       <FormikTextInput style={styles.user} name="userName" placeholder="UserName" />
       <FormikTextInput style={styles.password} name="password" placeholder="Password" secureTextEntry={true} />
       <TouchableWithoutFeedback onPress={onSubmit}>
-        <Text style={styles.submit}>Sign in</Text>
+        <View style={styles.submit}><Text style={styles.text}>Sign in</Text></View>
       </TouchableWithoutFeedback>    
     </View>
   );
