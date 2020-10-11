@@ -13,12 +13,11 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
   const { repositories } = useRepositories();
-  console.log('I am samundra')
    // Get the nodes from the edges array
    const repositoryNodes = repositories
    ? repositories.edges.map(edge => edge.node)
    : [];
-   console.log()
+   console.log('this is samundra dhakal', repositoryNodes)
 
 
 
@@ -33,7 +32,9 @@ const RepositoryList = () => {
       ItemSeparatorComponent={ItemSeparator}
       renderItem= {({item})=> (
         <RepositoryItem item = {item} />
-      )} />
+      )} 
+      keyExtractor={(item, index) => index.toString()}
+      />
   );
 };
 
