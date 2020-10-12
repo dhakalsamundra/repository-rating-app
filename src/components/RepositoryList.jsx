@@ -17,7 +17,6 @@ const RepositoryList = () => {
    const repositoryNodes = repositories
    ? repositories.edges.map(edge => edge.node)
    : [];
-   console.log('this is samundra dhakal', repositoryNodes)
 
 
 
@@ -25,7 +24,7 @@ const RepositoryList = () => {
     (loading, error, data) => {
       if (loading) return <h4>Loading...</h4>;
       if (error) console.log(error);
-      return data
+      return  (data)
     },
     <FlatList
       data={repositoryNodes}
